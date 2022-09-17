@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-light bg-dark p-3">
+      {% if 'login' in session %}
+      <img src="static/upload/{{session.image}}" width="70" height="70" class="shadow border" />&nbsp;&nbsp;&nbsp; <span class="text-capitalize text-warning fw-bold shadow">Welcome: {{session.username}}</span>
+      &nbsp; <a href="/logout" class="btn btn-outline-warning shadow" style="position:absolute;left:90%"> Log out</a>
+      {% endif %}
+</nav>
+
+<h1 align="center" class="p-2 fw-bold text-warning"> Home Page </h1><br><br>
+<h4 align="center"><br><br>
+    <a href="/">Login</a>&nbsp;&nbsp;
+</h4>
+
+<h4 align="center">
+    <a href="/Resistration">Registration</a>&nbsp;&nbsp;
+</h4>
+<p class="text-center text-muted mt-5 mb-0 text-dark fw-bold text-capitalize">{{session.username}}</p>
+
+{% endblock %}

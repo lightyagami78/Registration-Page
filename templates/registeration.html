@@ -1,0 +1,73 @@
+{% extends 'layout.html' %}
+{% include 'navbar.html' %}
+{% block content %}
+<section class="vh-180 bg-image p-5"
+style="background-image: url(https://wallpaperaccess.com/full/3100044.jpg);background-size:100% 100%;;">
+<div class="mask d-flex align-items-center h-90 gradient-custom-3">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+        <div class="card" style="border-radius: 15px;background-image:url(https://wallpaperaccess.com/full/1307540.jpg);">
+          <div class="card-body p-5">
+            <h2 class="text-uppercase text-center text-light mb-5">Create an account</h2>
+<!-- for insert the file we use (enctype) without this you can't add file  -->
+            <form name="frm" action="/insert" style="padding:0.5%;" method="POST" onsubmit=" return validation()" enctype="multipart/form-data">
+
+              <div class="form-outline mb-4">
+                  <label class="form-label text-light" for="form3Example1cg">Name</label>
+                <input type="text" placeholder="Name"  class="form-control form-control-lg"name="xname" id="xname"/>
+                <span id="usererror" class="text-danger font-weight-bold"></span>
+              </div>
+
+              <div class="form-outline mb-4">
+                  <label class="form-label text-light" for="form3Example3cg">Email</label>
+                <input type="email" placeholder="Email" name="xmail" required="required" id="xmail" class="form-control form-control-lg" />
+                <span id="emailerror" class="text-danger font-weight-bold"></span>
+              </div>
+
+              <div class="form-outline mb-4">
+                  <label class="form-label text-light" for="form3Example4cg">Phone</label>
+                <input type="tel" placeholder="Phone"  class="form-control form-control-lg" name="xphone"required="required" id="xphone" />
+                <span id="mobileerror" class="text-danger font-weight-bold"></span>
+              </div>
+
+              <div class="form-outline mb-4">
+                  <label class="form-label text-light" for="form3Example4cg">Password</label>
+                <input type="password" placeholder="password"  class="form-control form-control-lg" name="xpass" required="required" id="xpass" />
+                <span id="passworderror" class="text-danger font-weight-bold"></span>
+              </div>
+
+              <div class="form-outline mb-4">
+                  <label class="form-label text-light" for="form3Example4cdg">Verify Password</label>
+                <input type="password" placeholder="Verify Password" class="form-control form-control-lg" name="xvpass" required="required" id="xvpass" />
+                <span id="vpassworderror" class="text-danger font-weight-bold"></span>
+              </div>
+
+              <div class="form-outline mb-4 text-light">
+                <input type="file" name="xfile" accept="image/*"/>
+              </div>
+
+              <!-- <div class="form-check d-flex justify-content-center mb-5">
+              </div>
+-->
+              <div class="d-flex justify-content-center">
+                <button type="submit" name="xsub"
+                  class="btn btn-block btn-outline-warning btn-lg gradient-custom-4 text-body">Register</button>
+              </div>
+
+              <p class="text-center text-muted mt-5 mb-0 text-light">Have already an account? <a href="/"
+                  class="fw-bold text-body text-light"><u>Login here</u></a></p>
+               <p class="text-center text-muted mt-5 mb-0 text-light fw-bold">{{session.message}}</p>
+                  
+
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+    
+{% endblock %}

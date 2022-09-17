@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h1 style="padding: 1%;margin: auto;text-align: center;">Update</h1>
+<div style="margin:auto;height:200px;width:200px">
+<form name="frm" action="/update" style="padding:0.5%;" method="POST">
+    <label>NAME</label><br>
+    <input type="text" name="xname" value="{{mydata[0]}}" checked style="width: 250px;"><br><br>
+    <label>SALE</label><br>
+    <input type="number" name="xsale" value="{{mydata[2]}}" style="width: 250px;"><br><br>
+    <label>City</label><br>
+    <input type="text" name="xcity" value="{{mydata[3]}}" style="width: 250px;"><br><br>
+
+    <input type="hidden" name="xid" value="{{mydata[1]}}" style="width: 250px;"><br><br>
+    <input type="submit" name="xsub" value="update"/>
+</form>
+</div>
+{% endblock %}
